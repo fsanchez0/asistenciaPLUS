@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="card my-4">
+        <a href="/addReg" class="btn btn-success"><i class="fa fa-plus"></i>Agregar nuevo</a>
+    </div>
+    <div class="container">
+        <table id="data" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Teléfono Móvil</th>
+                <th>Correo Electrónico</th>
+                <th>Formación Académica</th>
+                <th>Categría en la que están propuestos</th>
+                <th>Fecha Programación</th>
+                <th>Hora Programación</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

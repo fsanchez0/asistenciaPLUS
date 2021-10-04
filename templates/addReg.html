@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <div class="row">
+        <div class="col">
+            <div class="card card-body">
+                <form action="/addReg" method="POST">
+                    <div class="form-group my-2">
+                        <input type="text" name="NOMBRE" placeholder="Nombre" class="form-control">
+                    </div>
+                    <div class="form-group my-2">
+                        <input type="number" name="EDAD" placeholder="Edad" class="form-control">
+                    </div>
+                    <div class="form-group my-2">
+                        <input type="text" name="TELEFONO" placeholder="Telefono" class="form-control">
+                    </div>
+                    <div class="form-group my-2">
+                        <BUtton type="submit" class="btn btn-success btn-block">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            Crear
+                        </BUtton>
+                        <a class="edit btn btn-outline-danger" href="/">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
