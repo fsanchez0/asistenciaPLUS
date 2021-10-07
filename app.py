@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, redirect, url_for, flash
+from waitress import serve
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -153,5 +154,6 @@ def delete_register(id):
     return redirect(url_for('home'))
 
 
-if __name__ == '__main__':
-    app.run()
+#if __name__ == '__main__':
+ #   app.run()
+serve(app, host='0.0.0.0', port=8080, threads=1)
