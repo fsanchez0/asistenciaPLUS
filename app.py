@@ -70,7 +70,7 @@ class Asistencias(db.Model): #Clase Asistencias = Tabla Asistencias
 
 @app.route('/', methods=["GET", "POST"])
 def home():
-    return render_template("home.html", title='Lista de Asistencias')
+    return render_template("home.html", title='Gas Bienestar')
 
 
 @app.route('/api/data')
@@ -95,6 +95,23 @@ def add_register():
                 asistencia.NOMBRE = request.form['NOMBRE']
                 asistencia.EDAD = int(request.form['EDAD'])
                 asistencia.TELEFONO = request.form['TELEFONO']
+                asistencia.TELEFONO_MOVIL = request.form['TELEFONO_MOVIL']
+                asistencia.CORREO = request.form['CORREO']
+                asistencia.FORMACION_ACADEMICA = request.form['FORMACION_ACADEMICA']
+                asistencia.CATEGORIA_PROPUESTOS = request.form['CATEGORIA_PROPUESTOS']
+                asistencia.ORIGEN = request.form['ORIGEN']
+                asistencia.F_PROGRAMACION = request.form['F_PROGRAMACION']
+                asistencia.RESPONSABLE = request.form['RESPONSABLE']
+                asistencia.HORARIO_ESCALONADO = request.form['HORARIO_ESCALONADO']
+                asistencia.ID_BT = int(request.form['ID_BT'])
+                asistencia.TIPO_LICENCIA = request.form['TIPO_LICENCIA']
+                asistencia.OBS = request.form['OBS']
+                asistencia.PRUEBA_MANEJO = request.form['PRUEBA_MANEJO']
+                asistencia.APTO = request.form['APTO']
+                asistencia.MMPI = request.form['MMPI']
+                asistencia.RESULTADO_MMPI = request.form['RESULTADO_MMPI']
+                asistencia.CAPACITACION_SEGURIDAD = request.form['CAPACITACION_SEGURIDAD']
+                asistencia.DOCUMENTACION = request.form['DOCUMENTACION']
                 db.session.add(asistencia)
                 db.session.commit()
                 flash('Usuario agregado exitosamente')
