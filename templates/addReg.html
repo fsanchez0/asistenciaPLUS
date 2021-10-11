@@ -15,6 +15,135 @@
                         <input type="text" name="TELEFONO" placeholder="Telefono" class="form-control">
                     </div>
                     <div class="form-group my-2">
+                        <input type="text" name="TELEFONO_MOVIL" placeholder="Celular" class="form-control">
+                    </div>
+                    <div class="form-group my-2">
+                        <input type="text" name="CORREO" placeholder="Correo Electrónico" class="form-control">
+                    </div>
+                    <div class="form-group my-2">
+                        <input type="text" name="FORMACION_ACADEMICA" placeholder="Formación Académica" class="form-control">
+                    </div>
+                    <div class="row mb-3">
+                        <label for="categoria_propuestos" class="col-sm-4 col-form-label">Categoría</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" name="CATEGORIA_PROPUESTOS">
+                            <option value="CHOFER" type="text" >Chofer</option>
+                            <option value="AYUDANTE" type="text">Ayudate</option>
+                          </select>
+                        </div>
+                      </div>
+                    <div class="form-group my-2">
+                        <input type="text" name="ORIGEN" placeholder="Origen" class="form-control">
+                    </div>
+                    <div class="row mb-3">
+                        <label for="f_programacion" class="col-sm-4 col-form-label">Fecha de Programación</label>
+                        <div class="col-sm-8">
+                          <input type="date" name="F_PROGRAMACION" placeholder="Fecha de programación" class="form-control" id="f_programacion">
+                        </div>
+                      </div>
+                    <div class="row mb-3">
+                <label for="responsable" class="col-sm-4 col-form-label">Responsable</label>
+                    <div class="col-sm-8">
+                      <select class="form-select" id="responsable" name="RESPONSABLE">
+                        <option value="ALEJANDRO PABLO CHÁVEZ" type="text" >ALEJANDRO PABLO CHÁVEZ</option>
+                        <option value="ARLETTE ARVIZU RICO" type="text" >ARLETTE ARVIZU RICO</option>
+                        <option value="ARTURO ENRIQUE VILLAR" type="text" >ARTURO ENRIQUE VILLAR</option>
+                        <option value="BRENDA CARMONA" type="text" >BRENDA CARMONA</option>
+                        <option value="CLAUDIA OLIVIA ROSAS" type="text" >CLAUDIA OLIVIA ROSAS</option>
+                        <option value="CLAUDIA PULIDO" type="text" >CLAUDIA PULIDO</option>
+                        <option value="DANIEL SAUCEDO" type="text" >DANIEL SAUCEDO</option>
+                        <option value="ERIKA MARÍA CARPY" type="text" >ERIKA MARÍA CARPY</option>
+                        <option value="ETNA SÁNCHEZ" type="text" >ETNA SÁNCHEZ</option>
+                        <option value="FABIOLA CÁRDENAS" type="text" >FABIOLA CÁRDENAS</option>
+                        <option value="FERNANDO MONTES DE OCA" type="text" >FERNANDO MONTES DE OCA</option>
+                        <option value="GEMA HERRERA" type="text" >GEMA HERRERA</option>
+                        <option value="GUADALUPE JIMÉNEZ" type="text" >GUADALUPE JIMÉNEZ</option>
+                        <option value="JAIME MORALES" type="text" >JAIME MORALES</option>
+                        <option value="JESÚS GARCÍA SÁNCHEZ" type="text" >JESÚS GARCÍA SÁNCHEZ</option>
+                        <option value="KARLA LÓPEZ CORTES" type="text" >KARLA LÓPEZ CORTES</option>
+                        <option value="MARIA ESTHER" type="text" >MARIA ESTHER</option>
+                        <option value="MÓNICA JUDITH CHAO" type="text" >MÓNICA JUDITH CHAO</option>
+                        <option value="PAMELA SEGOVIA" type="text" >PAMELA SEGOVIA</option>
+                        <option value="PRISCILA ÁLVAREZ ROMERO" type="text" >PRISCILA ÁLVAREZ ROMERO</option>
+                        <option value="QUETZALLI ENEDELIA" type="text" >QUETZALLI ENEDELIA</option>
+                        <option value="CANTO" type="text" >CANTO</option>
+                        <option value="RAÚL" type="text" >RAÚL</option>
+                        <option value="SECRE MEX GAS" type="text" >SECRE MEX GAS</option>
+                        <option value="VANIA ANAHÍ MORENO" type="text" >VANIA ANAHÍ MORENO</option>
+                        <option value="OTRO" type="text">OTRO</option>
+                      </select>
+                    </div>
+                  </div>
+                     <div class="row mb-3">
+                        <label for="horario" class="col-sm-4 col-form-label">Horario Escalonado</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" id="horario" name="HORARIO_ESCALONADO">
+                            <option value="8:00:00 a.m." type="text" >8:00:00 a.m.</option>
+                            <option value="10:00:00 a.m." type="text">10:00:00 a.m.</option>
+                            <option value="12:00:00 p.m." type="text">12:00:00 p.m.</option>
+                            <option value="14:00:00 hrs." type="text">14:00:00 hrs.</option>
+                            <option value="16.00:00 hrs." type="text">16.00:00 hrs.</option>
+                            <option value="PENDIENTE DE CONFIRMAR" type="text">PENDIENTE DE CONFIRMAR</option>
+                          </select>
+                        </div>
+                      </div>
+                    <div class="form-group my-2">
+                        <input type="number" name="ID_BT" placeholder="ID BT" class="form-control">
+                    </div>
+                    <div class="form-group my-2">
+                        <input type="text" name="TIPO_LICENCIA" placeholder="Tipo de Licencia" class="form-control">
+                    </div>
+                    <div class="form-group my-2">
+                        <input type="text" name="OBS" placeholder="OBS" class="form-control">
+                    </div>
+                    <div class="row mb-3">
+                        <label for="prueba_manejo" class="col-sm-4 col-form-label">Prueba de Manejo</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" id="prueba_manejo" name="PRUEBA_MANEJO">
+                            <option value="OK" type="text" >OK</option>
+                            <option value="N/A" type="text">N/A</option>
+                          </select>
+                        </div>
+                      </div>
+                    <div class="row mb-3">
+                <label for="apto" class="col-sm-4 col-form-label">Apto</label>
+                    <div class="col-sm-8">
+                      <select class="form-select" id="apto" name="APTO">
+                        <option value="APTO" type="text" >APTO</option>
+                        <option value="NO APTO" type="text">NO APTO</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="mmpi" class="col-sm-4 col-form-label">MMPI</label>
+                    <div class="col-sm-8">
+                      <select class="form-select" id="mmpi" name="MMPI">
+                        <option value="Sí" type="text" >Sí</option>
+                        <option value=" " type="text"> </option>
+                      </select>
+                    </div>
+                  </div>
+                   <div class="row mb-3">
+                    <label for="resultado_mmpi" class="col-sm-4 col-form-label">Resultado MMPI</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" id="resultado_mmpi" name="RESULTADO_MMPI">
+                            <option value="R" type="text" >R</option>
+                            <option value="R+" type="text" >R+</option>
+                            <option value="NR" type="text" >NR</option>
+                            <option value="FALTA RESULTADO" type="text" >FALTA RESULTADO</option>
+                            <option value="INVÁLIDA" type="text" >INVÁLIDA</option>
+                            <option value="N/A" type="text" >N/A</option>
+                            <option value=" " type="text"> </option>
+                          </select>
+                        </div>
+                      </div>
+                    <div class="form-group my-2">
+                        <input type="text" name="CAPACITACION_SEGURIDAD" placeholder="Capacitación de Seguridad" class="form-control">
+                    </div>
+                    <div class="form-group my-2">
+                        <input type="text" name="DOCUMENTACION" placeholder="Documentación" class="form-control">
+                    </div>
+                    <div class="form-group my-2">
 
                         <BUtton type="submit" class="btn btn-success btn-block">
                             <i class="fa fa-plus" aria-hidden="true"></i>
