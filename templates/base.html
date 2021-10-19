@@ -12,7 +12,9 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand">Gas Bienestar</a>
+                <a class="navbar-brand" href="#">
+                    <img src="{{url_for('static', filename='GB2.png')}}" height="30" alt="">
+                  </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,7 +30,8 @@
         </nav>
     </header>
     <div class="container">
-      <h1>{{ title }}</h1>
+        <img src="{{url_for('static', filename='GB2.png')}}" height="150" alt="">
+        <h2>{{ tile }}</h2>
       <hr>
       {% block content %}{% endblock %}
     </div>
@@ -80,6 +83,15 @@
               window.location.href = "/deleteReg/" + id;
             });
         });
+
+        function eliminarDiacriticos(texto) {
+            return texto.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+        }
+        //  Prueba
+        function mostrarSinDiacriticos(inp){
+            document.getElementById('nombre')
+                .value = eliminarDiacriticos(inp.value);
+        }
     </script>
   </body>
 </html>

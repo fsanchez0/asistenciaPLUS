@@ -70,7 +70,7 @@ class Asistencias(db.Model): #Clase Asistencias = Tabla Asistencias
 
 @app.route('/', methods=["GET", "POST"])
 def home():
-    return render_template("home.html", title='Gas Bienestar')
+    return render_template("home.html", title='Inicio')
 
 
 @app.route('/api/data')
