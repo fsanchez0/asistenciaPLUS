@@ -1,6 +1,11 @@
-from flask import Flask, request, render_template, redirect, url_for, flash
+from flask import Flask, request, render_template, redirect, url_for, flash, send_file
 from waitress import serve
 from flask_sqlalchemy import SQLAlchemy
+import numpy as np
+import xlsxwriter
+import pandas as pd
+from io import BytesIO
+import pymssql
 import os
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
@@ -79,6 +84,28 @@ def data():
     return {
         'data': [asistencia.to_dict() for asistencia in query]
     }
+
+
+@app.route('/download')
+def download():
+    g_connect = pymssql.connect('vwtutsqlp065.un.pemex.com', 'sapp', 'Pemex.2020*', 'PEMEX')
+    sql_query = pd.read_sql_query('''SELECT * FROM Asistencias''', g_connect)
+    # create a random Pandas dataframe
+    df = pd.DataFrame(sql_query)
+    df["F_PROGRAMACION"] = df["F_PROGRAMACION"].dt.strftime("%d/%m/%Y")
+    # create an output stream
+    output = BytesIO()
+    writer = pd.ExcelWriter(output, engine='xlsxwriter')
+
+    df.to_excel(writer, startrow=0, merge_cells=False, sheet_name="Asistencias")
+    workBook = writer.book
+    workSheet = writer.sheets["Asistencias"]
+    # the writer has done its job
+    writer.close()
+    # go back to the beginning of the stream
+    output.seek(0)
+    return send_file(output, attachment_filename="Asistencias.xlsx", as_attachment=True)
+
 
 
 @app.route('/addReg')

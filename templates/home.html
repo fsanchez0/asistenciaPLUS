@@ -10,9 +10,15 @@
     {% endfor %}
     {% endif %}
     {% endwith %}
-    <div class="card my-4">
-        <a href="/addReg" class="btn btn-success"><i class="fa fa-plus"></i>Agregar nuevo</a>
+    <div class="row my-4">
+        <div class="col-md-9">
+            <a href="/addReg" class="btn btn-success w-100"><i class="fa fa-plus"></i> Agregar nuevo</a>
+        </div>
+        <div class="col-md-3">
+            <a href="/download" download class="btn btn-primary w-100"><i class="fa fa-file-excel-o"></i> Descargar</a>
+        </div>
     </div>
+
     <div class="container">
         <table id="data" class="table table-striped">
             <thead>
@@ -32,4 +38,7 @@
             </tbody>
         </table>
     </div>
+    <script>
+
+    </script>
 {% endblock %}

@@ -7,13 +7,14 @@
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+      <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   </head>
   <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="{{url_for('static', filename='GB2.png')}}" height="30" alt="">
+                    Gas Bienestar
                   </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +31,7 @@
         </nav>
     </header>
     <div class="container">
-        <img src="{{url_for('static', filename='GB2.png')}}" height="150" alt="">
+        <img src="{{url_for('static', filename='GB2.png')}}" height="100" alt="Logo de Gas Bienestar">
         <h2>{{ tile }}</h2>
       <hr>
       {% block content %}{% endblock %}
@@ -47,7 +48,6 @@
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
     <script>
         $(document).ready(function () {
-
           var table = $('#data').DataTable({
               ajax: '/api/data',
               language: {
@@ -62,10 +62,6 @@
                   {data: 'f_programacion'},
                   {data: 'horario_escalonado'},
                   {defaultContent: '<a class="edit btn btn-warning" value="Editar"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a class="delete btn btn-danger" value="Borrar"><i class="fa fa-trash" aria-hidden="true"></i></a>'}
-              ],
-              dom: 'Bfrtip',
-              "buttons": [
-                'excel'
               ],
           });
           $('#data tbody').on('click', '.edit', function () {
