@@ -125,7 +125,7 @@ def add_register():
             try:
                 asistencia = Asistencias()
                 asistencia.NOMBRE = request.form['NOMBRE']
-                asistencia.EDAD = int(request.form['EDAD'])
+                asistencia.EDAD = request.form['EDAD']
                 asistencia.TELEFONO = request.form['TELEFONO']
                 asistencia.TELEFONO_MOVIL = request.form['TELEFONO_MOVIL']
                 asistencia.CORREO = request.form['CORREO']
@@ -135,7 +135,7 @@ def add_register():
                 asistencia.F_PROGRAMACION = request.form['F_PROGRAMACION']
                 asistencia.RESPONSABLE = request.form['RESPONSABLE']
                 asistencia.HORARIO_ESCALONADO = request.form['HORARIO_ESCALONADO']
-                asistencia.ID_BT = int(request.form['ID_BT'])
+                asistencia.ID_BT = request.form['ID_BT']
                 asistencia.TIPO_LICENCIA = request.form['TIPO_LICENCIA']
                 asistencia.OBS = request.form['OBS']
                 asistencia.PRUEBA_MANEJO = request.form['PRUEBA_MANEJO']
@@ -145,9 +145,7 @@ def add_register():
                 asistencia.CAPACITACION_SEGURIDAD = request.form['CAPACITACION_SEGURIDAD']
                 asistencia.DOCUMENTACION = request.form['DOCUMENTACION']
                 db.session.add(asistencia)
-                print("1")
                 db.session.commit()
-                print("2")
                 flash('Usuario agregado exitosamente')
             except Exception as e:
                 flash('Falló al agregar: ', e)
@@ -169,7 +167,7 @@ def updateReg(id):
             asistencia = Asistencias.query.filter_by(ID=id).first()
             if asistencia is not None:
                 asistencia.NOMBRE = request.form['NOMBRE']
-                asistencia.EDAD = int(request.form['EDAD'])
+                asistencia.EDAD = request.form['EDAD']
                 asistencia.TELEFONO = request.form['TELEFONO']
                 asistencia.TELEFONO_MOVIL = request.form['TELEFONO_MOVIL']
                 asistencia.CORREO = request.form['CORREO']
@@ -179,7 +177,7 @@ def updateReg(id):
                 asistencia.F_PROGRAMACION = request.form['F_PROGRAMACION']
                 asistencia.RESPONSABLE = request.form['RESPONSABLE']
                 asistencia.HORARIO_ESCALONADO = request.form['HORARIO_ESCALONADO']
-                asistencia.ID_BT = int(request.form['ID_BT'])
+                asistencia.ID_BT = request.form['ID_BT']
                 asistencia.TIPO_LICENCIA = request.form['TIPO_LICENCIA']
                 asistencia.OBS = request.form['OBS']
                 asistencia.PRUEBA_MANEJO = request.form['PRUEBA_MANEJO']
