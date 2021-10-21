@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 import numpy as np
 import xlsxwriter
 import pandas as pd
+import datetime
 from io import BytesIO
 import pymssql
 import os
@@ -48,6 +49,10 @@ class Asistencias(db.Model): #Clase Asistencias = Tabla Asistencias
         return "<Nombre: {}>".format(self.NOMBRE)
 
     def to_dict(self):
+        fecha = self.F_PROGRAMACION
+        if(self.F_PROGRAMACION is not None):
+            fecha = self.F_PROGRAMACION.strftime("%d/%m/%Y")
+
         return {
             'id': self.ID,
             'nombre': self.NOMBRE,
@@ -58,7 +63,7 @@ class Asistencias(db.Model): #Clase Asistencias = Tabla Asistencias
             'formacion_academica': self.FORMACION_ACADEMICA,
             'categoria_propuestos': self.CATEGORIA_PROPUESTOS,
             'origen': self.ORIGEN,
-            'f_programacion': self.F_PROGRAMACION,
+            'f_programacion': fecha,
             'responsable': self.RESPONSABLE,
             'horario_escalonado': self.HORARIO_ESCALONADO,
             'id_bt': self.ID_BT,
@@ -97,7 +102,7 @@ def download():
     output = BytesIO()
     writer = pd.ExcelWriter(output, engine='xlsxwriter')
 
-    df.to_excel(writer, startrow=0, merge_cells=False, sheet_name="Asistencias")
+    df.to_excel(writer, startrow=0, merge_cells=False, sheet_name="Asistencias", index=False)
     workBook = writer.book
     workSheet = writer.sheets["Asistencias"]
     # the writer has done its job
@@ -140,7 +145,9 @@ def add_register():
                 asistencia.CAPACITACION_SEGURIDAD = request.form['CAPACITACION_SEGURIDAD']
                 asistencia.DOCUMENTACION = request.form['DOCUMENTACION']
                 db.session.add(asistencia)
+                print("1")
                 db.session.commit()
+                print("2")
                 flash('Usuario agregado exitosamente')
             except Exception as e:
                 flash('Falló al agregar: ', e)

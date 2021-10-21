@@ -6,7 +6,7 @@
                 <div class="row mb-3">
                     <label for="nombre" class="col-sm-4 col-form-label" >Nombre</label>
                     <div class="col-sm-8">
-                        <input id="nombre" style="text-transform: uppercase;" oninput="mostrarSinDiacriticos(this)" type="text" name="NOMBRE" placeholder="Nombre" class="form-control">
+                        <input id="nombre" oninput="mostrarSinDiacriticos(this)" type="text" name="NOMBRE" placeholder="Nombre" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -42,7 +42,7 @@
                             <option value="SECUNDARIA" type="text">SECUNDARIA</option>
                             <option value="BACHILLERATO" type="text">BACHILLERATO</option>
                             <option value="UNIVERSIDAD" type="text">UNIVERSIDAD</option>
-                            <option value="MAESTRÍA" type="text">MAESTRÍA</option>
+                            <option value="MAESTRIA" type="text">MAESTRÍA</option>
                           </select>
                     </div>
                 </div>
@@ -51,15 +51,15 @@
                     <div class="col-sm-8">
                       <select class="form-select" name="CATEGORIA_PROPUESTOS">
                         <option selected="selected" value="N/A" type="text">N/A</option>
-                        <option value="CHOFER" type="text" >Chofer</option>
-                        <option value="AYUDANTE" type="text">Ayudate</option>
+                        <option value="CHOFER" type="text" >CHOFER</option>
+                        <option value="AYUDANTE" type="text">AYUDANTE</option>
                       </select>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="origen" class="col-sm-4 col-form-label">Origen</label>
                     <div class="col-sm-8">
-                        <input type="text" name="ORIGEN" placeholder="Origen" class="form-control">
+                        <input id="origen" oninput="mostrarSinDiacriticos(this)" type="text" name="ORIGEN" placeholder="Origen" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -130,7 +130,7 @@
                 <div class="row mb-3">
                     <label for="obs" class="col-sm-4 col-form-label">OBS</label>
                     <div class="col-sm-8">
-                        <input type="text" name="OBS" placeholder="OBS" class="form-control">
+                        <input id="obs" oninput="mostrarSinDiacriticos(this)" type="text" name="OBS" placeholder="OBS" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -177,13 +177,13 @@
                 <div class="row mb-3">
                     <label for="capacitacion_seguridad" class="col-sm-4 col-form-label">Capacitación Seguridad</label>
                     <div class="col-sm-8">
-                        <input type="text" name="CAPACITACION_SEGURIDAD" placeholder="Capacitación de Seguridad" class="form-control">
+                        <input id="capac" oninput="mostrarSinDiacriticos(this)" type="text" name="CAPACITACION_SEGURIDAD" placeholder="Capacitación de Seguridad" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="documentacion" class="col-sm-4 col-form-label">Documentación</label>
                     <div class="col-sm-8">
-                        <input type="text" name="DOCUMENTACION" placeholder="Documentación" class="form-control">
+                        <input id="docum" oninput="mostrarSinDiacriticos(this)" type="text" name="DOCUMENTACION" placeholder="Documentación" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">

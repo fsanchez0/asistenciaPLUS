@@ -81,12 +81,14 @@
         });
 
         function eliminarDiacriticos(texto) {
-            return texto.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+            texto = texto.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+            return texto.toUpperCase();
         }
         //  Prueba
         function mostrarSinDiacriticos(inp){
-            document.getElementById('nombre')
+            document.getElementById(inp.id)
                 .value = eliminarDiacriticos(inp.value);
+            console.log(document.getElementById(inp.id).value);
         }
     </script>
   </body>

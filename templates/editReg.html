@@ -7,7 +7,7 @@
             <div class="row mb-3">
                 <label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
                 <div class="col-sm-8">
-                    <input type="text" name="NOMBRE" placeholder="Nombre" value="{{reg.NOMBRE}}" class="form-control" id="nombre">
+                    <input id="nombre" oninput="mostrarSinDiacriticos(this)" type="text" name="NOMBRE" placeholder="Nombre" value="{{reg.NOMBRE}}" class="form-control" id="nombre">
                 </div>
               </div>
               <div class="row mb-3">
@@ -38,7 +38,14 @@
               <div class="row mb-3">
                 <label for="formacion_academica" class="col-sm-4 col-form-label">Formación Académica</label>
                 <div class="col-sm-8">
-                    <input type="text" name="FORMACION_ACADEMICA" placeholder="Formacion Académica" value="{{reg.FORMACION_ACADEMICA}}" class="form-control" id="formacion_academica">
+                     <select class="form-select" name="FORMACION_ACADEMICA">
+                        <option selected="selected" type="text">{{ reg.FORMACION_ACADEMICA }}</option>
+                        <option value="PRIMARIA" type="text" >PRIMARIA</option>
+                        <option value="SECUNDARIA" type="text">SECUNDARIA</option>
+                        <option value="BACHILLERATO" type="text">BACHILLERATO</option>
+                        <option value="UNIVERSIDAD" type="text">UNIVERSIDAD</option>
+                        <option value="MAESTRIA" type="text">MAESTRÍA</option>
+                      </select>
                 </div>
               </div>
               <div class="row mb-3">
@@ -54,7 +61,7 @@
               <div class="row mb-3">
                 <label for="origen" class="col-sm-4 col-form-label">Origen</label>
                 <div class="col-sm-8">
-                    <input type="text" name="ORIGEN" placeholder="Origen" value="{{reg.ORIGEN}}" class="form-control" id="origen">
+                    <input id="origen" oninput="mostrarSinDiacriticos(this)" type="text" name="ORIGEN" placeholder="Origen" value="{{reg.ORIGEN}}" class="form-control" id="origen">
                 </div>
               </div>
               <div class="row mb-3">
@@ -126,7 +133,7 @@
               <div class="row mb-3">
                 <label for="obs" class="col-sm-4 col-form-label">OBS</label>
                 <div class="col-sm-8">
-                    <input type="text" name="OBS" placeholder="OBS" value="{{reg.OBS}}" class="form-control" id="obs">
+                    <input id="obs" oninput="mostrarSinDiacriticos(this)" type="text" name="OBS" placeholder="OBS" value="{{reg.OBS}}" class="form-control" id="obs">
                 </div>
               </div>
               <div class="row mb-3">
@@ -177,13 +184,13 @@
               <div class="row mb-3">
                 <label for="capacitacion_seguridad" class="col-sm-4 col-form-label">Capacitación Seguridad</label>
                 <div class="col-sm-8">
-                    <input type="text" name="CAPACITACION_SEGURIDAD" placeholder="Capacitación seguridad" value="{{reg.CAPACITACION_SEGURIDAD}}" class="form-control" id="capacitacion_seguridad">
+                    <input id="capac" oninput="mostrarSinDiacriticos(this)" type="text" name="CAPACITACION_SEGURIDAD" placeholder="Capacitación seguridad" value="{{reg.CAPACITACION_SEGURIDAD}}" class="form-control" id="capacitacion_seguridad">
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="documentacion" class="col-sm-4 col-form-label">Documentación</label>
                 <div class="col-sm-8">
-                    <input type="text" name="DOCUMENTACION" placeholder="Documentación" value="{{reg.DOCUMENTACION}}" class="form-control" id="documentacion">
+                    <input id="docum" oninput="mostrarSinDiacriticos(this)" type="text" name="DOCUMENTACION" placeholder="Documentación" value="{{reg.DOCUMENTACION}}" class="form-control" id="documentacion">
                 </div>
               </div>
                 <BUtton type="submit" class="btn btn-primary">
